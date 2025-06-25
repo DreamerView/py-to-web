@@ -6,6 +6,9 @@ SELF_CLOSING_TAGS = {
 def el(tag, text=None, children=None, **attrs):
     if 'cls' in attrs:
         attrs['class'] = attrs.pop('cls')
+    for k in list(attrs):
+        if "_" in k:
+            attrs[k.replace("_", "-")] = attrs.pop(k)
 
     attr_str = ''.join(f' {k}="{v}"' for k, v in attrs.items())
 

@@ -10,7 +10,7 @@ def render():
         ]),
         el("body", children=[
             el("div", cls="container", children=[
-                el("img",src="logo.png", cls="logo"),
+                el("img",src="logo.png",cls="logo", data_bs_theme="dark"),
                 el("h1", text="Welcome to py-to-web!"),
                 el("p",text="More info ",children=[
                     el("a",text="click here",href="https://github.com/DreamerView/py-to-web")
