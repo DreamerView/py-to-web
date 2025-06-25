@@ -53,7 +53,7 @@ py-to-web/
 ├── pages/
 │   ├── index.py
 │   └── about.py
-├── pyxhtml/
+├── py_to_web/
 │   └── core.py
 └── dev.py
 ```
