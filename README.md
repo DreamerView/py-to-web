@@ -1,5 +1,9 @@
 # 🐍 py-to-web
 
+<p align="center">
+  <img src="public/logo.png" alt="py-to-web logo" width="200"/>
+</p>
+
 **py-to-web** is a minimal Python-based framework that lets you build web pages using plain Python functions instead of HTML. Inspired by React and JSX, but for Python.
 
 ## ⚡ Features
