@@ -1,101 +1,93 @@
-# ⚡ py-to-web
+# 🐍 py-to-web
 
-**py-to-web** is a minimalist Python framework that transforms simple Python files with a `render()` function into static HTML pages. It's designed for developers who value simplicity, readability, and full control over their markup.
+**py-to-web** is a minimal Python-based framework that lets you build web pages using plain Python functions instead of HTML. Inspired by React and JSX, but for Python.
 
----
+## ⚡ Features
 
-## 🚀 Quick Start
+* Write HTML structures using Python functions
+* Modular component support (like `el_header`, `el_footer`, etc.)
+* Live rebuild on changes using [`py-mon`](https://github.com/SpotlightKid/py-mon)
+* Built-in HTTP server to serve output folder
+* Supports passing custom props to components
+
+## 📦 Installation
 
 ```bash
 git clone https://github.com/DreamerView/py-to-web.git
 cd py-to-web
-python dev.py
+pip install -r requirements.txt
 ```
 
-Then open your browser at:
+Install `py-mon` globally (for development):
 
+```bash
+pip install py-mon
 ```
-http://localhost:8000
+
+## 🚀 Getting Started
+
+```bash
+py-mon dev.py
 ```
 
----
+This command watches changes in `pages/`, `components/`, and `public/`, and rebuilds HTML files in the `output/` folder.
 
-## 📂 Project Structure
+## 🧱 Folder Structure
 
 ```
 py-to-web/
-├── pages/             # Python files with render() -> str
-│   └── index.py       # Example: returns a full HTML string
-├── components/        # Reusable Python blocks
-├── public/            # Static files like CSS, JS, images
-├── output/            # Auto-generated HTML output
-├── main.py            # Core logic to save HTML
-└── dev.py             # Watcher + HTTP dev server
+├── components/
+│   ├── header.py
+│   ├── footer.py
+│   └── ...
+├── pages/
+│   ├── index.py
+│   └── about.py
+├── output/
+│   └── index.html
+├── pyxhtml/
+│   └── core.py
+└── dev.py
 ```
 
----
-
-## 🧠 Example Page
+## 🛠 Example
 
 ```python
 # pages/index.py
-from components.header import el_header
-from components.main import el_main
 from components.footer import el_footer
 from pyxhtml.core import el
 
 def render():
-    return (
-        '<!DOCTYPE html>' +
-        el("html", lang="ru", children=[
-            el("head", children=[
-                el("meta", charset="UTF-8"),
-                el("title", text="pyxhtml Demo")
-            ]),
-            el("body", children=[
-                el("h1",text="Nice work!!!"),
-                el_header(),
-                el_main(),
-                el_footer()
+    return el("html", children=[
+        el("head", children=[
+            el("title", text="Hello py-to-web"),
+            el("link", rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css")
+        ]),
+        el("body", children=[
+            el("div", cls="container", children=[
+                el("h1", text="Welcome to py-to-web!"),
+                el_footer(title="Made with ❤️ by Temirhan")
             ])
         ])
-    )
-
+    ])
 ```
 
----
+## 🔄 Component with Props
 
-## 🔥 Features
+```python
+# components/footer.py
+from pyxhtml.core import el
 
-* 📁 Renders only `.py` files inside `pages`
-* ✨ Clean Python syntax, no template engines
-* 🌐 Built-in local HTTP server on `localhost:8000`
-* 👀 Watches changes in `pages/`, `components/`, and `public/`
-* ⚡ Super fast and dependency-light (only `watchdog`)
-
----
-
-## 📦 Dependencies
-
-```bash
-pip install watchdog
+def el_footer(**props):
+    return el("footer", cls="site-footer", children=[
+        el("p", text=props.get("title", "© 2025 Default Title"))
+    ])
 ```
 
----
+## 🌐 Preview
 
-## 📌 Roadmap
+Open `http://localhost:8000` in your browser after running `dev.py`.
 
-* [ ] Nested pages support (`pages/blog/index.py`)
-* [ ] Markdown rendering
-* [ ] HTML minification
-* [ ] CLI: `py-to-web build` and `py-to-web dev`
+## 📜 License
 
----
-
-## 💡 Philosophy
-
-> Use Python as your templating language. No abstraction, just code.
-
----
-
-Made with love by Temirkhan.
+MIT © 2025 Temirhan
