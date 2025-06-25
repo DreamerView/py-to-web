@@ -63,7 +63,7 @@ py-to-web/
 ```python
 # pages/index.py
 from components.footer import el_footer
-from pyxhtml.core import el
+from py_to_web.core import el
 
 def render():
     return el("html", children=[
@@ -84,7 +84,7 @@ def render():
 
 ```python
 # components/footer.py
-from pyxhtml.core import el
+from py_to_web.core import el
 
 def el_footer(**props):
     return el("footer", cls="site-footer", children=[
