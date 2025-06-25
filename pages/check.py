@@ -1,7 +1,7 @@
 from components.header import el_header
 from components.main import el_main
 from components.footer import el_footer
-from pyxhtml.core import el
+from py_to_web.core import el
 
 def render():
     return (

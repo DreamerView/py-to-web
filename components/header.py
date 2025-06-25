@@ -1,4 +1,4 @@
-from pyxhtml.core import el
+from py_to_web.core import el
 
 def el_header():
     return el("header", cls="site-header", children=[

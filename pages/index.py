@@ -1,6 +1,6 @@
 # pages/index.py
 from components.footer import el_footer
-from pyxhtml.core import el
+from py_to_web.core import el
 
 def render():
     return el("html", children=[
@@ -10,7 +10,7 @@ def render():
         ]),
         el("body", children=[
             el("div", cls="container", children=[
-                el("img",src="logo.png",cls="logo", data_bs_theme="dark"),
+                el("img",src="logo.png",cls="logo"),
                 el("h1", text="Welcome to py-to-web!"),
                 el("p",text="More info ",children=[
                     el("a",text="click here",href="https://github.com/DreamerView/py-to-web")

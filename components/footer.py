@@ -1,4 +1,4 @@
-from pyxhtml.core import el
+from py_to_web.core import el
 
 def el_footer(**props):
     return el("footer", cls="site-footer", children=[
