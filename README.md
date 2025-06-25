@@ -27,7 +27,7 @@ pip install py-mon
 ## 🚀 Getting Started
 
 ```bash
-py-mon dev.py
+pymon dev.py
 ```
 
 This command watches changes in `pages/`, `components/`, and `public/`, and rebuilds HTML files in the `output/` folder.
