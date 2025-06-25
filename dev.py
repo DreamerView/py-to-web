@@ -5,7 +5,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from threading import Thread
 
 sys.dont_write_bytecode = True
-OUTPUT_DIR = "output"
+OUTPUT_DIR = "public"
 
 def save_html(html, filename):
     path = os.path.join(OUTPUT_DIR, filename)
