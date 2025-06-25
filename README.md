@@ -34,6 +34,10 @@ pip install py-mon
 pymon dev.py
 ```
 
+## 🌐 Preview
+
+Open `http://localhost:8000` in your browser after running `dev.py`.
+
 ![py-to-web logo](public/preview.png)
 
 This command watches changes in `pages/`, `components/`, and `public/`, and rebuilds HTML files in the `output/` folder.
@@ -87,10 +91,6 @@ def el_footer(**props):
         el("p", text=props.get("title", "© 2025 Default Title"))
     ])
 ```
-
-## 🌐 Preview
-
-Open `http://localhost:8000` in your browser after running `dev.py`.
 
 ## 📜 License
 
