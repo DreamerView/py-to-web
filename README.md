@@ -49,8 +49,6 @@ py-to-web/
 ├── pages/
 │   ├── index.py
 │   └── about.py
-├── output/
-│   └── index.html
 ├── pyxhtml/
 │   └── core.py
 └── dev.py
